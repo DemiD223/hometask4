@@ -24,16 +24,20 @@ def winner():
         ("LOOSER!" if game_info["Player"] < game_info["Ai"] else "DRAWing!")
 
 
+def check_didgit(str):
+    return int(str) if str.isdigit() else - 100
+
+
 def action():
     r = random.randint(1, 3)
     a = random.randint(1, 20)
     b = random.randint(20, 40)
     if r == 1:
-        print("Good" if int(input(f"{a}+{b} = ")) == a + b else "Bad")
+        print("Good" if check_didgit(input(f"{a}+{b} = ")) == a + b else "Bad")
     elif r == 2:
-        print("Good" if int(input(f"{b}-{a} = ")) == b - a else "Bad")
+        print("Good" if check_didgit(input(f"{b}-{a} = ")) == b - a else "Bad")
     else:
-        print("Good" if int(input(f"{b}%{a} = ")) == b % a else "Bad")
+        print("Good" if check_didgit(input(f"{b}%{a} = ")) == b % a else "Bad")
 
 
 if __name__ == '__main__':
@@ -78,7 +82,7 @@ if __name__ == '__main__':
         if not years.isdigit():
             continue
         break
-    print(f"Hello {name}, on your next birthday you’ll be {int(years)+1} years")
+    print(f"Hello {name}, on your next birthday you’ll be {int(years) + 1} years")
 
     # TASK 3
     """
