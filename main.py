@@ -104,7 +104,7 @@ if __name__ == '__main__':
     i = 0
     while i < 5:
         random.shuffle(li)
-        print(li)
+        print("".join(li))
         i += 1
 
     # TASK 4
